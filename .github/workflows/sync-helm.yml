@@ -35,7 +35,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           path: ${{ env.HELM_CHART_REPO }}
-          repository: apache/${{ env.HELM_CHART_REPO }}
+          repository: aFlyBird0/${{ env.HELM_CHART_REPO }}
       - name: Update Helm Chart Image Tag
         run: |
           versionWithoutV=$(echo ${{ env.TAG }} | sed 's/^v//')
@@ -57,7 +57,7 @@ jobs:
           commit-message: "feat: sync image tags(auto by bot)"
 #          body: "Automated changes by [create-pull-request](https://github.com/peter-evans/create-pull-request) GitHub action"
           delete-branch: true
-          push-to-fork: ${{ env.FORK_REPO }}
+#          push-to-fork: ${{ env.FORK_REPO }}
           # if you want to active the configuration below,
           # you should use token with admin rights to devlake helm chart repo
 #          reviewers: user1,user2
